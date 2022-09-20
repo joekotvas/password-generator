@@ -1,0 +1,205 @@
+:root {
+    --backdrop: #1C1C1C;
+    --main-background-color: #1F2937;
+    --body-text: #D5D4D8;
+    --hightlight: #4ADF86;
+    --button-highlight: #10B981;
+    --text-highlight: #55F991;
+    --output: #273549;
+    --stroke: #2F3E53;
+}
+
+html {
+    background-color: var(--backdrop);
+    color: var(--body-text);
+    font-size: 1.3rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    background-color: var(--main-background-color);
+    margin: 2em auto;
+    padding: 50px;
+    width: 450px;
+    max-width: 90%;
+}
+h1 {
+    color: white;
+    margin-bottom: 0;
+}
+h1 strong {
+    display: block;
+    color: var(--hightlight);
+}
+
+/* Generator button and output */
+
+#main {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5rem 0;
+    padding-top: 1.5rem;
+    border-top: solid 2px var(--stroke);
+}
+
+/* Generator button */
+
+button {
+    background-color: var(--button-highlight);
+    color: white;
+    padding: .6rem .8rem;
+    border: none;
+    border-radius: 6px;
+    font-size: .8rem;
+}
+button:active {
+    opacity: .9;    
+}
+button[disabled], button[disabled]:active {
+    opacity: .8;
+}
+
+
+/* /Generator button */
+
+/* Output */
+
+#password-output {
+    background-color: var(--output);
+    display: block;
+    height: 2rem;
+    width: 50%;
+    border-radius: 6px;
+    color: var(--text-highlight);
+    font-size: .8rem;
+    text-align: center;
+    line-height: 2rem;
+    transition: all .2s;
+    overflow: hidden;
+}
+#password-output.disabled {
+    color: var(--body-text);
+    transition: all 0;
+}
+#password-output.copying {
+    background-color: #5d86b5;
+    color: var(--body-text);
+    box-shadow: 0 0 2px white;
+    transition: all .2s;
+}
+
+/* /Output */
+
+#options {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin-bottom: 2em;
+}
+#options > div {
+    width: 50%;
+}
+
+/* /Generator button and output */
+
+/* Configuration Inputs */
+
+#options input, .options label {
+    color: #9CA3AF;
+}
+
+#checkboxes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 5px;
+    grid-row-gap: 1em;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+#options input[type=checkbox]:checked {
+    accent-color: var(--button-highlight);
+}
+
+#slider {
+    display: flex;
+    padding-top: 5px;
+}
+
+#slider label {
+    min-width: 6em;
+}
+#slider label output {
+    font-weight: 600;
+}
+
+/* Range input cleanup */
+input[type=range] {
+    margin-top: -30px;
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    width: 100%; /* Specific width is required for Firefox. */
+    background: transparent; /* Otherwise white in Chrome */
+  }
+  
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+  }
+  
+  input[type=range]:focus {
+    outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+  }
+
+/* /Range input cleanup */
+
+/* Range input thumb styling */
+
+/* Special styling for WebKit/Blink */
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 10px;
+    width: 10px;
+    border-radius: 5px;
+    background: #ffffff;
+    cursor: pointer;
+    margin-top: -3px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  }
+  
+  /* All the same stuff for Firefox */
+  input[type=range]::-moz-range-thumb {
+    border: none;
+    height: 10px;
+    width: 10px;
+    border-radius: 5px;
+    background: #ffffff;
+    cursor: pointer;
+  }
+
+/* /Range input thumb styling */
+
+/* Range input track styling */
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    background: #9CA3AF;
+    border-radius: 1px;
+    border: none;
+  }
+  
+  input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #9CA3AF;
+  }
+  
+  input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    background: #9CA3AF;
+    border-radius: 1px;
+    border: none;
+  }
+
+/* Range input track styling */
